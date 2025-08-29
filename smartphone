@@ -1,0 +1,31 @@
+class Superhero:
+    def __init__(self, name, power, weakness):
+        self.name = name
+        self.power = power
+        self.weakness = weakness
+
+    def introduce(self):
+        print(f"I am {self.name}! My power is {self.power}.")
+
+    def reveal_weakness(self):
+        print(f"{self.name}'s weakness is {self.weakness}.")
+
+class FlyingSuperhero(Superhero):
+    def __init__(self, name, power, weakness, max_altitude):
+        super().__init__(name, power, weakness)
+        self.max_altitude = max_altitude
+
+    def fly(self):
+        print(f"{self.name} is flying up to {self.max_altitude} meters high!")
+
+if __name__ == "__main__":
+    hero1 = Superhero("Shadow Cat", "Invisibility", "Loud Noises")
+    hero2 = FlyingSuperhero("Sky Hawk", "Wind Control", "Storms", 12000)
+
+    hero1.introduce()
+    hero1.reveal_weakness()
+    print("---")
+    hero2.introduce()
+    hero2.fly()
+    hero2.reveal_weakness()
+
